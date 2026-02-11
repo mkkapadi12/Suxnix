@@ -24,6 +24,7 @@ import {
 } from "./ui/drawer";
 import { Button } from "./ui/button";
 import { drawerSocial } from "@/Data/homepageData";
+import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -89,10 +90,10 @@ export default function Navbar() {
           className={`flex items-center justify-between max-w-full w-full lg:py-5 mx-auto lg:px-6`}
         >
           <div className="flex">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img alt="" src={logo} className="w-auto h-14" />
-            </a>
+            </Link>
           </div>
 
           <PopoverGroup className="hidden lg:flex lg:gap-x-12">

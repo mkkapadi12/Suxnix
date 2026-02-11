@@ -158,7 +158,10 @@ const Home = () => {
                 <div className="grid order-2 gap-10 sm:grid-cols-2 lg:order-1">
                   {featuresData.map((item) => {
                     return (
-                      <div className="space-y-5 text-center sm:text-start">
+                      <div
+                        key={item.id}
+                        className="space-y-5 text-center sm:text-start"
+                      >
                         <div className="flex items-center justify-center sm:justify-start">
                           <item.icon
                             size={44}
@@ -354,7 +357,7 @@ const Home = () => {
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-3 sm:grid-cols-2">
                   {pricingPlans.map((item) => {
                     return (
-                      <div className="flex flex-col gap-3">
+                      <div key={item.id} className="flex flex-col gap-3">
                         <div className="text-lg text-center !text-white bg-suxnix-text_primary rounded-md p-2">
                           {item.highlight ? (
                             <h1 className="text-white">{item.highlightText}</h1>
@@ -488,7 +491,7 @@ const Home = () => {
 
         {/* Latest News Section */}
         <div>
-          <section className="py-16">
+          <section className="py-[100px]">
             <div className="container mx-auto max-w-[540px] md:max-w-[1320px] md:px-7 lg:px-3">
               <div className="flex flex-col items-start justify-between md:flex-row md:gap-8 lg:gap-2">
                 {/* latest news */}

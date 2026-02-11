@@ -3,14 +3,58 @@ import styled from "styled-components";
 import logo from "../assets/images/white_logo.png";
 import { ICONS } from "@/icons/icons";
 import { Link } from "react-router-dom";
-import { aboutUsLinks, supportLinks } from "@/Data/homepageData";
+import {
+  aboutUsLinks,
+  instagramPosts,
+  supportLinks,
+} from "@/Data/homepageData";
+import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import { Card, CardContent } from "./ui/card";
+import Autoplay from "embla-carousel-autoplay";
 
 const Footer = () => {
   return (
     <Wrapper>
       <footer className="">
         {/* footer instagram */}
-        <div className="relative z-[3] m-[0px_0px_95px]"></div>
+        <div className="relative z-[3] m-[0px_0px_-95px] footer-instagram">
+          <div className="container px-4 md:max-w-[960px] lg:max-w-[1320px] mx-auto sm:px-3">
+            <Carousel
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                }),
+              ]}
+              opts={{
+                align: "start",
+              }}
+              className="w-full max-w-full"
+            >
+              <CarouselContent>
+                {instagramPosts.map((post) => (
+                  <CarouselItem
+                    key={post.id}
+                    className="basis-1/2 sm:basis-1/3 md:basis-[20%] lg:basis-[20%]"
+                  >
+                    <div className="p-0">
+                      <Card className="sm:w-[211px] lg:w-[263px] sm:h-[211px] lg:h-[250px] shadow-none rounded-none border-none">
+                        <CardContent
+                          className={`p-0 sm:w-[211px] lg:w-[263px] sm:h-[211px] lg:h-[250px] footer-insta-item relative overflow-hidden cursor-pointer`}
+                        >
+                          <img
+                            src={post.image}
+                            alt={post.id}
+                            className="w-full h-full"
+                          />
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
+        </div>
         {/* footer top wrap */}
         <div className="footer-top-wrap p-[195px_0px_30px] relative z-[1] bg-[#0a0a0a]">
           <div className="container mx-auto md:max-w-[960px] lg:max-w-[1320px] px-4">
@@ -146,6 +190,42 @@ const Wrapper = styled.div`
     background-repeat: repeat;
     background-position: center;
     z-index: -1;
+  }
+
+  .footer-insta-item:hover:before {
+    opacity: 0.8;
+  }
+
+  .footer-insta-item:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d9b4d;
+    opacity: 0;
+    transition: all 0.3s ease-out 0s;
+  }
+
+  .footer-insta-item:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5ZM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7Zm5.25-.75a1 1 0 1 1 0 2a1 1 0 0 1 0-2Z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+
+  .footer-insta-item:hover:after {
+    opacity: 1;
   }
 `;
 
