@@ -15,6 +15,11 @@ import {
 } from "@heroicons/react/20/solid";
 
 import {
+  ArrowRight,
+  CalendarDays,
+  Check,
+  ChevronRight,
+  ChevronsRight,
   Clock,
   Eye,
   Facebook,
@@ -23,6 +28,7 @@ import {
   LayoutGrid,
   Linkedin,
   Mail,
+  MessageCircleMore,
   Search,
   ShoppingCart,
   Star,
@@ -39,6 +45,11 @@ export const ICONS = {
   MAIL: Mail,
   CLOCK: Clock,
   VIEWS: Eye,
+  CALENDAR: CalendarDays,
+  COMMENTS: MessageCircleMore,
+  RIGHT: ArrowRight,
+  CHECK: Check,
+  CHEVRONSRIGHT: ChevronsRight,
 
   //Hero icons
   BAR: Bars3Icon,

@@ -56,7 +56,7 @@ const ProductCard = ({ product }) => {
           <ShoppingCart className="w-5 h-5 text-white" />
         </Button>
 
-        {product.buyNow && <ShopButton size={"p-[13px_30px]"} />}
+        {product.buyNow && <ShopButton size={"sm"} />}
       </CardFooter>
     </Card>
   );

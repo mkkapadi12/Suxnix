@@ -1,63 +1,42 @@
 import React from "react";
-import styled from "styled-components";
 
-const ShopButton = ({ size }) => {
+const ShopButton = ({ size = "md" }) => {
+  const sizes = {
+    sm: "px-6 py-3 text-sm",
+    md: "px-10 py-4 text-base",
+    lg: "px-14 py-5 text-lg",
+  };
+
   return (
-    <Wrapper>
-      <a className={`btn btn-two ${size}`}>Shop Now</a>
-    </Wrapper>
+    <a
+      className={`
+        relative inline-block overflow-hidden
+        rounded-full border-[3px] border-white
+        bg-[#faa432] text-white font-bold
+        capitalize cursor-pointer select-none
+        leading-[1.4] whitespace-nowrap
+        transition-all duration-500
+        z-10 group
+        ${sizes[size]}
+      `}
+    >
+      {/* replaces ::before */}
+      <span
+        className="
+          absolute -z-10
+          w-[200%] h-[200%]
+          rounded-full
+          bg-[#0d9b4d]
+          left-1/2 top-[110%]
+          -translate-x-1/2
+          transition-all duration-500
+          group-hover:top-[-40%]
+        "
+      />
+
+      Shop Now
+    </a>
   );
 };
-
-const Wrapper = styled.div`
-  .btn {
-    user-select: none;
-    border-radius: 50px;
-    border: 3px solid white;
-    color: white;
-    background-color: #faa432;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 1.4;
-    margin-bottom: 0;
-    /* padding: 17px 52px; */
-    text-align: center;
-    text-transform: capitalize;
-    touch-action: manipulation;
-    transition: all 0.3s ease 0s;
-    vertical-align: middle;
-    white-space: nowrap;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-
-  .btn:before {
-    content: "";
-    position: absolute;
-    transition-duration: 0.8s;
-    width: 200%;
-    height: 200%;
-    top: 110%;
-    left: 50%;
-    transform: translate(-50%);
-    border-radius: 50%;
-    z-index: -1;
-  }
-  .btn-two:before {
-    background-color: #0d9b4d;
-  }
-
-  .btn:hover {
-    color: white;
-  }
-
-  .btn:hover::before {
-    top: -40%;
-  }
-`;
 
 export default ShopButton;

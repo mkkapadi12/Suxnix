@@ -36,7 +36,7 @@ const ProductHightlight = () => {
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-10 md:justify-start">
                       <div>
-                        <ShopButton size={"p-[17px_52px]"} />
+                        <ShopButton size={"md"} />
                       </div>
                       <div className="flex items-end gap-4">
                         <h1 className="text-3xl font-bold">$89.99</h1>
@@ -80,7 +80,7 @@ const ProductHightlight = () => {
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-10 md:justify-start">
                       <div>
-                        <ShopButton size={"p-[17px_52px]"} />
+                        <ShopButton size={"md"} />
                       </div>
                       <div className="flex items-end gap-4">
                         <h1 className="text-3xl font-bold">$59.99</h1>
@@ -126,7 +126,7 @@ const ProductHightlight = () => {
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-10 md:justify-start">
                       <div>
-                        <ShopButton size={"p-[17px_52px]"} />
+                        <ShopButton size={"md"} />
                       </div>
                       <div className="flex items-end gap-4">
                         <h1 className="text-3xl font-bold">$69.99</h1>
