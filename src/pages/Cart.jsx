@@ -51,13 +51,13 @@ const Cart = () => {
                   </Link>
                 </div>
               ) : (
-                <div className="flex flex-col items-center justify-center gap-10 sm:gap-0 md:flex-row md:items-start md:justify-start">
+                <div className="flex flex-col items-center justify-center gap-10 md:gap-0 md:flex-row md:items-start md:justify-start">
                   {/* cart product */}
-                  <div className="w-[66.67%] px-3">
-                    <Table>
+                  <div className="md:w-[66.67%] px-3 w-full">
+                    <Table className="!overflow-x-scroll min-w-[750px]">
                       <TableHeader>
                         <TableRow className="!font-semibold text-suxnix-text_heading text-base border-black !border-b-[2px]">
-                          <TableHead className="w-[150px]" />
+                          <TableHead className="max-w-[150px]" />
                           <TableHead>Product</TableHead>
                           <TableHead>Price</TableHead>
                           <TableHead className="">Quentity</TableHead>
@@ -71,8 +71,14 @@ const Cart = () => {
                             key={cart.id}
                             className="text-base font-medium"
                           >
-                            <TableCell className="">
-                              <img src={cart.image} alt="" />
+                            <TableCell className="sm:w-[150px] flex items-center justify-center">
+                              <div className="w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] flex-shrink-0">
+                                <img
+                                  src={cart.image}
+                                  alt={cart.name}
+                                  className="object-contain w-full h-full"
+                                />
+                              </div>
                             </TableCell>
                             <TableCell className="text-base font-medium text-suxnix-text_heading">
                               {cart.name}
@@ -99,7 +105,7 @@ const Cart = () => {
                     </Table>
 
                     {/* Apply coupon */}
-                    <div className="flex gap-4 w-[50%] px-[10px]">
+                    <div className="flex gap-4 md:w-[70%] px-[10px]">
                       <Input
                         type="text"
                         className="p-[25px] text-base text-suxnix-text_heading border-none rounded-full shadow-none focus-visible:ring-0 bg-[#f5f5f5]"
@@ -109,7 +115,7 @@ const Cart = () => {
                     </div>
                   </div>
                   {/* cart totals */}
-                  <div className="w-[33.33%] px-3">
+                  <div className="w-full md:w-[33.33%] px-3">
                     <div className="p-5 space-y-3 border">
                       <div className="pb-3 border-b-2">
                         <h1 className="text-2xl font-semibold">Cart Totals</h1>

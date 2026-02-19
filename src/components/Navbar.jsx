@@ -25,6 +25,7 @@ import {
 import { Button } from "./ui/button";
 import { drawerSocial } from "@/Data/homepageData";
 import { Link } from "react-router-dom";
+import { useCartContext } from "@/Context/Cartcontext";
 
 const products = [
   {
@@ -64,6 +65,9 @@ const callsToAction = [
 ];
 
 export default function Navbar() {
+  const { cart } = useCartContext();
+  console.log(cart);
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 

@@ -29,6 +29,7 @@ import {
   LayoutGrid,
   Linkedin,
   Mail,
+  Map,
   MessageCircleMore,
   Minus,
   Plus,
@@ -55,7 +56,8 @@ export const ICONS = {
   CHEVRONSRIGHT: ChevronsRight,
   MINUS: Minus,
   PLUS: Plus,
-  INDIANRUPEE : IndianRupee,
+  INDIANRUPEE: IndianRupee,
+  MAP: Map,
 
   //Hero icons
   BAR: Bars3Icon,
