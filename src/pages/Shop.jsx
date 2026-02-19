@@ -6,13 +6,18 @@ import ProductItem from "@/components/ProductItem";
 import { products, sortOptions } from "@/Data/shoppageData";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const Shop = () => {
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "Products";
+  }, []);
   return (
     <Wrapper>
       <Navbar />

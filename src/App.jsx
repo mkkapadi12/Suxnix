@@ -7,6 +7,9 @@ import ForgotPassword from "./pages/Auth/ForgotPassword";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
 import Shop from "./pages/Shop";
+import ShopDetails from "./pages/ShopDetails";
+import Cart from "./pages/Cart";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
@@ -22,7 +25,10 @@ const App = () => {
         <Route exact path="/blog/news" element={<Blog />} />
         <Route exact path="/blog/news/:title" element={<BlogDetails />} />
         <Route exact path="/shop" element={<Shop />} />
+        <Route path="/shop/product/:id" element={<ShopDetails />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Toaster />
     </Router>
   );
 };

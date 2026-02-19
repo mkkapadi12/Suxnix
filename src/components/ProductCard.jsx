@@ -9,7 +9,9 @@ const ProductCard = ({ product }) => {
       <CardContent className="pt-8 text-start">
         {/* Image with half circle background */}
         <div className="relative flex justify-center mb-12">
-          <div className={`absolute -bottom-5 h-[103px] rounded-b-full w-[80%] ${product.color}`}></div>
+          <div
+            className={`absolute -bottom-5 h-[103px] rounded-b-full w-[80%] ${product.color}`}
+          ></div>
 
           <img
             src={product.image}
@@ -51,12 +53,14 @@ const ProductCard = ({ product }) => {
       <CardFooter className="flex items-center justify-start gap-4 pb-6">
         <Button
           size="icon"
-          className="bg-green-600 rounded-full h-11 w-11 hover:bg-green-700"
+          className="bg-green-600 rounded-full h-11 w-11 hover:bg-green-700 px-[20px] py-0"
         >
           <ShoppingCart className="w-5 h-5 text-white" />
         </Button>
 
-        {product.buyNow && <ShopButton size={"sm"} />}
+        {product.buyNow && (
+          <ShopButton size={"sm"} path={""} title={"Buy Now"} />
+        )}
       </CardFooter>
     </Card>
   );

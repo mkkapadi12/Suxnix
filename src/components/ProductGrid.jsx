@@ -18,7 +18,7 @@ const ProductGrid = () => {
               opts={{
                 align: "start",
               }}
-              className="w-full max-w-[90%] mx-auto sm:max-w-xs md:max-w-5xl lg:max-w-full"
+              className="w-full max-w-full mx-auto sm:max-w-xs md:max-w-5xl lg:max-w-full"
             >
               <CarouselContent>
                 {products.map((product) => (

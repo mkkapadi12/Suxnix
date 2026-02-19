@@ -198,7 +198,9 @@ export default function Navbar() {
           </PopoverGroup>
           <div className="flex items-center justify-center sm:gap-10">
             <div className="hidden text-suxnix-text_heading sm:block">
-              <ICONS.CART size={24} className="w-8 h-8" />
+              <Link to="/cart">
+                <ICONS.CART size={24} className="w-8 h-8" />
+              </Link>
             </div>
             <div className="hidden text-suxnix-text_heading sm:block">
               <ICONS.SEARCH size={24} className="w-8 h-8" />

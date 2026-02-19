@@ -61,7 +61,7 @@ const Home = () => {
                   Mix Protein Provided Way To Growth
                 </h2>
                 <div className="relative sm:top-[30px] lg:top-[32px] z-[9]">
-                  <ShopButton size={"md"} />
+                  <ShopButton size={"md"} path={""} title={"Shop Now"}/>
                 </div>
               </div>
               <div className="flex w-full p-4 py-0 text-center sm:relative sm:block sm:px-0">

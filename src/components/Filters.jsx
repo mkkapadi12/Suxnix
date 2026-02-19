@@ -122,7 +122,10 @@ const Filters = () => {
           <div className="flex flex-wrap gap-3">
             {popularTag.slice(0, 5).map((item) => {
               return (
-                <Button className="px-5 py-3 text-[12px] font-semibold uppercase border-none rounded-none shadow-none text-suxnix-text_heading hover:text-white hover:bg-suxnix-text_secondary bg-[#f5f5f5]">
+                <Button
+                  key={item.id}
+                  className="px-5 py-3 text-[12px] font-semibold uppercase border-none rounded-none shadow-none text-suxnix-text_heading hover:text-white hover:bg-suxnix-text_secondary bg-[#f5f5f5]"
+                >
                   {item.tag}
                 </Button>
               );
